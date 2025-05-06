@@ -1,0 +1,1857 @@
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <meta name="description" content="Join our weekly internal tech talks every Wednesday at 5-6pm. Discover insights from tech managers and developers on various technical topics and best practices.">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="">
+
+      <!-- Alpine.js - Load first -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      
+      <!-- Font Links -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <title>Code & Beyond | Internal Tech Talks Every Wednesday</title>
+      <!-- SEO Description -->
+      <meta name="description" content="Join our weekly internal tech talks every Wednesday at 5-6pm. Discover insights from tech managers and developers on various technical topics and best practices.">
+
+      <!-- Performance optimization: Preload critical resources -->
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      
+      <!-- Core CSS and Scripts -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+      
+      <!-- Project-specific styles -->
+      <style>
+        /* Base styles */
+        :root {
+          --primary-color: #3498db;
+          --secondary-color: #2c3e50;
+          --accent-color: ;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+          font-family: Rubik, Inter, system-ui, sans-serif;
+        }
+        body {
+          font-family: DM Sans, Inter, system-ui, sans-serif;
+        }
+
+        /* Interactive elements */
+        .interactive-element {
+          transition: all 0.3s ease;
+        }
+        .interactive-element:hover {
+          transform: translateY(-2px);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 8px;
+          height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .fade-in {
+          animation: fadeIn 0.5s ease-in-out;
+        }
+      </style>
+
+      <!-- Dynamic Meta Tags -->
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta name="robots" content="">
+      <meta property="og:title" content="">
+      <meta property="og:description" content="">
+      <meta property="og:image" content="">
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="en_US">
+      <meta property="og:site_name" content="Code &amp; Beyond">
+      
+      <!-- Favicon -->
+      <link rel="icon" type="image/x-icon" href="">
+
+      <!-- Header Scripts -->
+      <script id="header-scripts">
+        // This script tag will be replaced with actual scripts.head content
+        if (window.scripts && window.scripts.head) {
+          document.getElementById('header-scripts').outerHTML = window.scripts.head;
+        }
+      </script>
+
+      <!-- Project Configuration -->
+      <script>
+        window.projectConfig = {
+          name: 'Code &amp; Beyond',
+          settings: {
+            colors: {
+              primary: '#3498db',
+              secondary: '#2c3e50',
+              accent: ''
+            },
+            fonts: {
+              primary: 'Rubik',
+              secondary: 'DM Sans'
+            }
+          }
+        };
+      </script>
+   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative h-full">
+        <mountpoint><div id="RolloutPageContent">
+<div id="root">
+  <header id="header" class="bg-white shadow-sm fixed w-full z-50">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="#hero" class="text-xl font-bold text-neutral-800">
+            Code & Beyond
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:block">
+          <ul class="flex space-x-6">
+              <a href="#hero" class="font-Rubik text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Home</a>
+              <a href="#about" class="font-Rubik text-neutral-700 hover:text-neutral-900 transition-colors duration-300">About</a>
+              <a href="#schedule" class="font-Rubik text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Schedule</a>
+              <a href="#channels" class="font-Rubik text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Stay Updated</a>
+              <a href="#engagement" class="font-Rubik text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Benefits</a>
+              <a href="#post-event" class="font-Rubik text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Resources</a>
+          </ul>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden flex items-center" aria-label="Toggle menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-neutral-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2">
+        <nav>
+          <ul class="flex flex-col space-y-3">
+              <a href="#hero" class="font-Rubik text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Home</a>
+              <a href="#about" class="font-Rubik text-neutral-700 hover:text-neutral-900 transition-colors duration-300">About</a>
+              <a href="#schedule" class="font-Rubik text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Schedule</a>
+              <a href="#channels" class="font-Rubik text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Stay Updated</a>
+              <a href="#engagement" class="font-Rubik text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Benefits</a>
+              <a href="#post-event" class="font-Rubik text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Resources</a>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    // Mobile menu toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', function() {
+        const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        mobileMenuButton.setAttribute('aria-expanded', !expanded);
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
+</div>
+
+
+<div id="root">
+  <section id="hero" class="pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8dGVjaCUyMHRhbGslMjBwcmVzZW50YXRpb24lMjBpbiUyMG1vZGVybiUyMG9mZmljZXxlbnwwfDB8MXx8MTc0NjUxNTEzNHww&ixlib=rb-4.1.0&q=80&w=1080" 
+        alt="Tech talk presentation in modern office" 
+        class="w-full h-full object-cover opacity-20"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-neutral-900 to-neutral-800 opacity-90"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <span class="text-blue-400">Code</span> & <span class="text-blue-400">Beyond</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-neutral-200 mb-8">
+          Casual yet insightful weekly tech sessions every Wednesday
+        </p>
+        
+        <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-12">
+          <div class="bg-neutral-800 bg-opacity-70 backdrop-blur-sm p-4 rounded-lg text-center w-full md:w-auto">
+            <p class="text-neutral-300 text-sm uppercase tracking-wider mb-1">Next Session</p>
+            <p class="text-white font-semibold">Wednesday, 5-6 PM</p>
+          </div>
+          
+          <div class="bg-neutral-800 bg-opacity-70 backdrop-blur-sm p-4 rounded-lg text-center w-full md:w-auto">
+            <p class="text-neutral-300 text-sm uppercase tracking-wider mb-1">Duration</p>
+            <p class="text-white font-semibold">45-60 minutes</p>
+          </div>
+          
+          <div class="bg-neutral-800 bg-opacity-70 backdrop-blur-sm p-4 rounded-lg text-center w-full md:w-auto">
+            <p class="text-neutral-300 text-sm uppercase tracking-wider mb-1">Format</p>
+            <p class="text-white font-semibold">Internal Speaker Spotlight</p>
+          </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#schedule" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-300">
+            View Schedule
+          </a>
+          <a href="#schedule" class="px-8 py-3 bg-neutral-700 hover:bg-neutral-600 text-white font-medium rounded-lg transition-colors duration-300">
+            Meet Speakers
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-neutral-900 to-transparent"></div>
+  </section>
+</div>
+
+
+                
+<div id="root">
+  <section id="about" class="py-16 bg-neutral-50">
+    <div class="container mx-auto px-4" id="el-zxdsyaok">
+      <div class="text-center mb-12" id="el-q1a8h3hy">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-800 mb-4" id="el-mph6pktj">About</h2>
+        <p class="text-lg text-neutral-600 max-w-3xl mx-auto" id="el-ym3kufe7">
+          Learn about our weekly tech knowledge-sharing initiative designed to foster collaboration and growth within our organization.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16" id="el-1keqq70g">
+        <div id="el-gp6l9x4r">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8dGVjaCUyMHRhbGslMjBwcmVzZW50YXRpb258ZW58MHx8fHwxNzQ2NTE1MTU3fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Tech talk presentation with audience" class="rounded-lg shadow-md w-full h-auto object-cover aspect-video" loading="lazy" id="el-733ucx4x">
+        </div>
+        <div id="el-lpq21icr">
+          <h3 class="text-2xl font-bold text-neutral-800 mb-4" id="el-jragjim4">What is Code &amp; Beyond?</h3>
+          <p class="text-neutral-700 mb-4" id="el-0e7zejpd">
+            Code &amp; Beyond is our internal knowledge-sharing platform where team members present on technical topics, share insights, and foster collaboration across departments.
+          </p>
+          <ul class="space-y-3" id="el-mum49uab">
+            <li class="flex items-start" id="el-froi5onc">
+              <span class="text-blue-500 mr-2" id="el-0tvf8fz8">✓</span>
+              <span class="text-neutral-700" id="el-g5o6g96k">Weekly sessions every Wednesday from 5-6 PM</span>
+            </li>
+            <li class="flex items-start" id="el-k45bp8yd">
+              <span class="text-blue-500 mr-2" id="el-i73ho5si">✓</span>
+              <span class="text-neutral-700" id="el-xk9v56pp">45-60 minute format with dedicated Q&amp;A time</span>
+            </li>
+            <li class="flex items-start" id="el-p2w1jwxi">
+              <span class="text-blue-500 mr-2" id="el-zqi3n7w2">✓</span>
+              <span class="text-neutral-700" id="el-k9njj0ez">Diverse topics from technical skills to soft skills</span>
+            </li>
+            <li class="flex items-start" id="el-9n1ipqew">
+              <span class="text-blue-500 mr-2" id="el-31x3tn8k">✓</span>
+              <span class="text-neutral-700" id="el-mxck0wd6">Open platform for all team members to contribute</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="el-71uyz825">
+        <div class="bg-white p-6 rounded-lg border border-neutral-200" id="el-x9mnb1gs">
+          <div class="mb-4 h-48 overflow-hidden rounded-md" id="el-tn5gw99g">
+            <img src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8dGVjaCUyMHRhbGslMjBwcmVzZW50YXRpb258ZW58MHx8fHwxNzQ2NTE1MTU3fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Tech presentation with monitor" class="w-full h-full object-cover" loading="lazy" id="el-n89yqbbs">
+          </div>
+          <h3 class="text-xl font-semibold text-neutral-800 mb-2" id="el-9gavvcmp">Learn from Experts</h3>
+          <p class="text-neutral-600" id="el-ktczunck">
+            Our sessions feature tech managers and experienced developers sharing their expertise on various technical and soft skill topics.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg border border-neutral-200" id="el-c79h6nx0">
+          <div class="mb-4 h-48 overflow-hidden rounded-md" id="el-f58eprnh">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8M3x8dGVjaCUyMHRhbGslMjBwcmVzZW50YXRpb258ZW58MHx8fHwxNzQ2NTE1MTU3fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Brainstorming session" class="w-full h-full object-cover" loading="lazy" id="el-nqxglapo">
+          </div>
+          <h3 class="text-xl font-semibold text-neutral-800 mb-2" id="el-bjymxqkp">Grow Together</h3>
+          <p class="text-neutral-600" id="el-dvwsnie0">
+            Participate in interactive sessions with Q&amp;A opportunities to deepen your understanding and connect with colleagues.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg border border-neutral-200" id="el-fkinzz8e">
+          <div class="mb-4 h-48 overflow-hidden rounded-md bg-neutral-100 flex items-center justify-center" id="el-vl3mx1bx"><img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8c2Vzc2lvbnxlbnwwfHx8fDE3NDY1MTc0ODF8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Image" style="max-width: 100%; object-fit: cover;">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-xl8gg5ls">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" id="el-j1q4g9lk"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-neutral-800 mb-2" id="el-tqkr1d54">Stay Connected</h3>
+          <p class="text-neutral-600" id="el-ked38nzw">
+            Access recordings and summary notes after each session to revisit key insights and share with team members who couldn't attend.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+              
+
+                
+<div id="root">
+  <section id="schedule" class="py-16 bg-white">
+    <div class="container mx-auto px-4" id="el-j5f9o9b8">
+      <div class="text-center mb-12" id="el-60gng764">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-800 mb-4" id="el-kthhdxzc">Schedule</h2>
+        <p class="text-lg text-neutral-600 max-w-3xl mx-auto" id="el-33scc1ml">
+          Join us every Wednesday from 5-6 PM for insightful tech talks and knowledge sharing.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12" id="el-xhb0bb3g">
+        <div class="order-2 lg:order-1" id="el-ir0dzaj5">
+          <h3 class="text-2xl font-bold text-neutral-800 mb-6" id="el-3ruuh30m">Upcoming Sessions</h3>
+          
+          <div class="space-y-6" id="el-h3w6ndv4">
+            <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 transition-all hover:shadow-md" id="el-158x6dcz">
+              <div class="flex flex-col md:flex-row md:items-center gap-4" id="el-g202vv3e">
+                <div class="bg-blue-600 text-white rounded-lg p-3 text-center min-w-[80px]" id="el-o07ged9t">
+                  <span class="block text-sm" id="el-ulpbsimv">WED</span>
+                  <span class="block text-xl font-bold" id="el-uiedp1xs">15</span>
+                  <span class="block text-sm" id="el-byk0tlhv">MAY</span>
+                </div>
+                <div class="flex-1" id="el-riui7lbp">
+                  <h4 class="text-lg font-semibold text-neutral-800" id="el-okinrp3h">Excel Use Cases for Developers</h4>
+                  <p class="text-neutral-600 mb-2" id="el-6b0rp0qt">Best practices in documentation</p>
+                  <div class="flex items-center text-neutral-500 text-sm" id="el-kbxswset">
+                    <span class="flex items-center" id="el-w52fzkxd">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-7rm76c5c">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" id="el-5myk2h9t"></path>
+                      </svg>
+                      5:00 - 6:00 PM
+                    </span>
+                    <span class="mx-3" id="el-r3741r0q">|</span>
+                    <span id="el-5f4v71pd">Abhishek Aggarwal</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 transition-all hover:shadow-md" id="el-snx0th3q">
+              <div class="flex flex-col md:flex-row md:items-center gap-4" id="el-5eeobvmx">
+                <div class="bg-blue-600 text-white rounded-lg p-3 text-center min-w-[80px]" id="el-lkdjqqin">
+                  <span class="block text-sm" id="el-4sq8066k">WED</span>
+                  <span class="block text-xl font-bold" id="el-iohznth5">22</span>
+                  <span class="block text-sm" id="el-7gn0lcvf">MAY</span>
+                </div>
+                <div class="flex-1" id="el-bhmjl1kf">
+                  <h4 class="text-lg font-semibold text-neutral-800" id="el-xqupozq5">Client Communication and Project Management</h4>
+                  <p class="text-neutral-600 mb-2" id="el-y0jilywi">Effective strategies for tech teams</p>
+                  <div class="flex items-center text-neutral-500 text-sm" id="el-a56rh0sg">
+                    <span class="flex items-center" id="el-u4cg3ty8">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-o6lzmzr5">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" id="el-zylmgfka"></path>
+                      </svg>
+                      5:00 - 6:00 PM
+                    </span>
+                    <span class="mx-3" id="el-2umx2ro4">|</span>
+                    <span id="el-ox3v74zz">Kuldeep Vaishaya</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 transition-all hover:shadow-md" id="el-2bngm98c">
+              <div class="flex flex-col md:flex-row md:items-center gap-4" id="el-pcgosgto">
+                <div class="bg-blue-600 text-white rounded-lg p-3 text-center min-w-[80px]" id="el-mn5zctem">
+                  <span class="block text-sm" id="el-7g9tyvlq">WED</span>
+                  <span class="block text-xl font-bold" id="el-2zfpjk8t">29</span>
+                  <span class="block text-sm" id="el-ka3or0m2">MAY</span>
+                </div>
+                <div class="flex-1" id="el-kpuin6ym">
+                  <h4 class="text-lg font-semibold text-neutral-800" id="el-1vqethmw">Modules in Plugin Development</h4>
+                  <p class="text-neutral-600 mb-2" id="el-5ymrob4x">Magento and Shopify – A Comparative Insight</p>
+                  <div class="flex items-center text-neutral-500 text-sm" id="el-mlmo0eze">
+                    <span class="flex items-center" id="el-nuv0um13">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-pvs1y2sx">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" id="el-6153ujz7"></path>
+                      </svg>
+                      5:00 - 6:00 PM
+                    </span>
+                    <span class="mx-3" id="el-tbvs2d88">|</span>
+                    <span id="el-cx6jp1qb">Amaresh Tiwari</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <button id="show-more-btn" class="text-blue-600 hover:text-blue-800 font-medium flex items-center mx-auto mt-4" style="color: rgb(92, 103, 129);">
+              <span id="el-sm4qtmj7" data-original-content="View more upcoming sessions" style="transition: outline 0.2s, background-color 0.2s;" contenteditable="false">More sessions coming soon</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor" id="el-h0e7c3kn">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" id="el-p3kul74b"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+        <div class="order-1 lg:order-2 relative" id="el-25ucqna7">
+          <div class="relative h-[400px] rounded-lg overflow-hidden" id="el-iw9yfc5e">
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8dGVjaCUyMHRhbGslMjBjYWxlbmRhciUyMHNjaGVkdWxlfGVufDF8fHx8MTc0NjUxNTE5MXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Calendar and laptop on desk" class="w-full h-full object-cover" loading="lazy" id="el-2vsz22jf">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent opacity-60" id="el-3kvqwdj5"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white" id="el-cmu6ps3x">
+              <h3 class="text-xl font-bold mb-2" id="el-an8ie9iw">Regular Schedule</h3>
+              <p id="el-bj92mwa9">Every Wednesday, 5:00 - 6:00 PM</p>
+            </div>
+          </div>
+          
+          <div class="absolute -bottom-6 -right-6 md:-bottom-8 md:-right-8 w-32 h-32 md:w-48 md:h-48 rounded-lg overflow-hidden border-4 border-white shadow-lg" id="el-zi16gp5p">
+            <img src="https://images.unsplash.com/uploads/141103282695035fa1380/95cdfeef?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8dGVjaCUyMHRhbGslMjBjYWxlbmRhciUyMHNjaGVkdWxlfGVufDF8fHx8MTc0NjUxNTE5MXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Typing on keyboard" class="w-full h-full object-cover" loading="lazy" id="el-rupl8v7b">
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-neutral-50 p-6 md:p-8 rounded-lg border border-neutral-200 mt-12" id="el-jsjl36zt">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6" id="el-li2in709">
+          <h3 class="text-xl font-bold text-neutral-800" id="el-6403mta3">Session Format</h3>
+          <div class="flex space-x-4" id="el-lj8zfr7a">
+            <div class="flex items-center" id="el-fet6k26e">
+              <div class="w-3 h-3 rounded-full bg-blue-500 mr-2" id="el-kyqeowhy"></div>
+              <span class="text-sm text-neutral-600" id="el-85v1hyg4">Presentation (40-45 min)</span>
+            </div>
+            <div class="flex items-center" id="el-87ou4v43">
+              <div class="w-3 h-3 rounded-full bg-green-500 mr-2" id="el-c9367w40"></div>
+              <span class="text-sm text-neutral-600" id="el-skh3hbdq">Q&amp;A (10-15 min)</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="w-full bg-white rounded-lg p-4 border border-neutral-200" id="el-5jx1rsxz">
+          <div class="relative pt-1" id="el-nnj3rd08">
+            <div class="flex mb-2 items-center justify-between" id="el-bhcpzfyy">
+              <div id="el-7lejek1n">
+                <span class="text-xs font-semibold inline-block text-blue-600" id="el-i40fg0wc">
+                  Session Timeline
+                </span>
+              </div>
+              <div id="el-e4af58vb">
+                <span class="text-xs font-semibold inline-block text-blue-600" id="el-5gcf5kue">
+                  60 min
+                </span>
+              </div>
+            </div>
+            <div class="flex h-2 mb-4 overflow-hidden rounded bg-neutral-200" id="el-l2ayeiln">
+              <div style="width: 75%" class="bg-blue-500" id="el-jqu53mbo"></div>
+              <div style="width: 25%" class="bg-green-500" id="el-q8mopxhb"></div>
+            </div>
+            <div class="flex text-xs justify-between" id="el-lk2gql7c">
+              <span id="el-99ulvi16">5:00 PM</span>
+              <span id="el-0ex4kvgc">5:45 PM</span>
+              <span id="el-6ysuw5r4">6:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Hidden content for modal -->
+    <div id="more-sessions" class="hidden">
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 transition-all hover:shadow-md" id="el-e6ktlfms">
+        <div class="flex flex-col md:flex-row md:items-center gap-4" id="el-ekmnpebg">
+          <div class="bg-blue-600 text-white rounded-lg p-3 text-center min-w-[80px]" id="el-jjupjqyx">
+            <span class="block text-sm" id="el-i34h1ukl">WED</span>
+            <span class="block text-xl font-bold" id="el-ailkuzc9">05</span>
+            <span class="block text-sm" id="el-7g5qz4eg">JUN</span>
+          </div>
+          <div class="flex-1" id="el-chpxedcz">
+            <h4 class="text-lg font-semibold text-neutral-800" id="el-euwsp5uh">Frontend Mastery</h4>
+            <p class="text-neutral-600 mb-2" id="el-lmh999cg">Smart Strategies for Scalable UI &amp; Meaningful UX</p>
+            <div class="flex items-center text-neutral-500 text-sm" id="el-7p3kzzh1">
+              <span class="flex items-center" id="el-c271veki">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-fewrc7r3">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" id="el-npqa8gc0"></path>
+                </svg>
+                5:00 - 6:00 PM
+              </span>
+              <span class="mx-3" id="el-tgc2xsbg">|</span>
+              <span id="el-mpxxdmoe">Shekhar Kumar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 transition-all hover:shadow-md mt-6" id="el-bbbsfe70">
+        <div class="flex flex-col md:flex-row md:items-center gap-4" id="el-czld8ap9">
+          <div class="bg-blue-600 text-white rounded-lg p-3 text-center min-w-[80px]" id="el-tn4y8m7h">
+            <span class="block text-sm" id="el-gerfxgk5">WED</span>
+            <span class="block text-xl font-bold" id="el-xnuxnzhq">12</span>
+            <span class="block text-sm" id="el-chwpzw7d">JUN</span>
+          </div>
+          <div class="flex-1" id="el-8twasbni">
+            <h4 class="text-lg font-semibold text-neutral-800" id="el-p7791qzx">Headless E-Commerce</h4>
+            <p class="text-neutral-600 mb-2" id="el-2lkhhwbv">Future-Ready Online Selling</p>
+            <div class="flex items-center text-neutral-500 text-sm" id="el-srifq1bf">
+              <span class="flex items-center" id="el-ers52b3t">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-3vundfqa">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" id="el-1jukqc3q"></path>
+                </svg>
+                5:00 - 6:00 PM
+              </span>
+              <span class="mx-3" id="el-0xy71jgp">|</span>
+              <span id="el-cglnee9e">Sushil Yadav</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal for more sessions -->
+    <div id="sessions-modal" class="fixed inset-0 bg-neutral-900 bg-opacity-50 z-50 flex items-center justify-center hidden" aria-modal="true" aria-hidden="true">
+      <div class="bg-white rounded-lg max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto" role="dialog" aria-labelledby="modal-title" id="el-xwpu3eda">
+        <div class="p-6 border-b border-neutral-200 flex justify-between items-center" id="el-u3m5g8jo">
+          <h3 id="modal-title" class="text-xl font-bold text-neutral-800">Upcoming Sessions</h3>
+          <button id="close-modal-btn" class="text-neutral-500 hover:text-neutral-700" aria-label="Close modal">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-mdmiqzgi">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" id="el-u4ed0r8v"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="p-6" id="modal-content">
+          <!-- Content will be inserted here by JavaScript -->
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const showMoreBtn = document.getElementById('show-more-btn');
+        const sessionsModal = document.getElementById('sessions-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const modalContent = document.getElementById('modal-content');
+        const moreSessionsContent = document.getElementById('more-sessions').innerHTML;
+        let lastFocusedElement;
+        
+        // Function to open modal
+        function openModal() {
+          lastFocusedElement = document.activeElement;
+          modalContent.innerHTML = moreSessionsContent;
+          sessionsModal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+          sessionsModal.setAttribute('aria-hidden', 'false');
+          
+          // Focus trap
+          setTimeout(() => {
+            closeModalBtn.focus();
+          }, 100);
+        }
+        
+        // Function to close modal
+        function closeModal() {
+          sessionsModal.classList.add('hidden');
+          document.body.style.overflow = '';
+          sessionsModal.setAttribute('aria-hidden', 'true');
+          
+          // Return focus
+          if (lastFocusedElement) {
+            lastFocusedElement.focus();
+          }
+        }
+        
+        // Event listeners
+        showMoreBtn.addEventListener('click', openModal);
+        closeModalBtn.addEventListener('click', closeModal);
+        
+        // Close on background click
+        sessionsModal.addEventListener('click', function(e) {
+          if (e.target === sessionsModal) {
+            closeModal();
+          }
+        });
+        
+        // Close on ESC key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && !sessionsModal.classList.contains('hidden')) {
+            closeModal();
+          }
+        });
+      });
+    </script>
+  </section>
+</div>
+
+              
+
+                
+                
+<div id="root">
+  
+</div>
+
+              
+              
+
+                
+                
+                
+<div id="root">
+  <section id="channels" class="py-16 bg-white">
+    <div class="container mx-auto px-4" id="el-t4tv79eh">
+      <div class="text-center mb-12" id="el-k77xotz4">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-800 mb-4" id="el-fru59flh">Stay Updated</h2>
+        <p class="text-lg text-neutral-600 max-w-3xl mx-auto" id="el-5nn48kig">
+          Never miss a session with our multiple communication channels.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" id="el-fl532u9f">
+        <div id="el-pnxaijca">
+          <h3 class="text-2xl font-bold text-neutral-800 mb-6" id="el-737xhf9k">About Our Channels</h3>
+          <p class="text-lg text-neutral-600 mb-4" id="el-s1fwsl5f">We offer multiple channels to keep you informed about upcoming sessions, including WhatsApp groups, calendar invites, and email updates.</p>
+          <p class="text-lg text-neutral-600 mb-4" id="el-s1fwsl5f">Our WhatsApp group is a great way to stay up-to-date with weekly reminders and session teasers. You can also receive calendar invites with all the details you need to join our sessions.</p>
+          <p class="text-lg text-neutral-600 mb-4" id="el-s1fwsl5f">If you prefer to receive updates via email, you can subscribe to our mailing list and receive weekly emails with session details and preparation materials.</p>
+        </div>
+        
+        <div id="el-0tzmsa9e">
+          <h3 class="text-2xl font-bold text-neutral-800 mb-6" id="el-737xhf9k">Communication Channels</h3>
+          
+          <div class="space-y-6" id="el-weip3jmd">
+            <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 transition-all hover:shadow-md" id="el-fkk64s3b">
+              <div class="flex items-start gap-4" id="el-c1891b0s">
+                <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0" id="el-e9zg6hai">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-bxhho4tq">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" id="el-9gzxxp90"></path>
+                  </svg>
+                </div>
+                <div class="flex-1" id="el-b0zp5wsa">
+                  <h4 class="text-lg font-semibold text-neutral-800" id="el-usovz0xp">WhatsApp Group</h4>
+                  <p class="text-neutral-600 mb-3" id="el-s1fwsl5f">Weekly reminders with session teasers to get you excited about upcoming talks.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 transition-all hover:shadow-md" id="el-umzg0u5t">
+              <div class="flex items-start gap-4" id="el-r5r0rcp1">
+                <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0" id="el-p2r4babm">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-b02h6y1j">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" id="el-x8bmb7si"></path>
+                  </svg>
+                </div>
+                <div class="flex-1" id="el-i16td5ea">
+                  <h4 class="text-lg font-semibold text-neutral-800" id="el-okh5ezp8">Calendar Invites</h4>
+                  <p class="text-neutral-600 mb-3" id="el-5gmat6r9">Team-wide recurring calendar invites with all session details and meeting links.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 transition-all hover:shadow-md" id="el-q9u2vsyv">
+              <div class="flex items-start gap-4" id="el-56eyacgl">
+                <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center flex-shrink-0" id="el-eiigke4a">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-gcsvifuh">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" id="el-oibvoaax"></path>
+                  </svg>
+                </div>
+                <div class="flex-1" id="el-83xk3q1l">
+                  <h4 class="text-lg font-semibold text-neutral-800" id="el-e9oi1u4n">Email Updates</h4>
+                  <p class="text-neutral-600 mb-3" id="el-lykor7zw">"This Week on Code &amp; Beyond" emails with session details and preparation materials.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+    
+    <!-- WhatsApp Modal -->
+    <div id="whatsapp-modal" class="fixed inset-0 bg-neutral-900 bg-opacity-50 z-50 flex items-center justify-center hidden" aria-modal="true" aria-hidden="true">
+      <div class="bg-white rounded-lg max-w-md w-full mx-4" role="dialog" aria-labelledby="whatsapp-modal-title" id="el-boudqb38">
+        <div class="p-6 border-b border-neutral-200 flex justify-between items-center" id="el-wqdyosu0">
+          <h3 id="whatsapp-modal-title" class="text-xl font-bold text-neutral-800">Join WhatsApp Group</h3>
+          <button id="close-whatsapp-modal-btn" class="text-neutral-500 hover:text-neutral-700" aria-label="Close modal">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-0401lf22">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" id="el-s592bnyh"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="p-6" id="el-eze4z0ex">
+          <p class="text-neutral-700 mb-4" id="el-akzpaesh">
+            Scan the QR code below or enter your details to receive an invitation to the Code &amp; Beyond WhatsApp group.
+          </p>
+          <form id="whatsapp-form">
+            <div class="mb-4" id="el-64xezn9x">
+              <label for="whatsapp-name" class="block text-neutral-700 font-medium mb-2" id="el-i80nfea7">Your Name</label>
+              <input type="text" id="whatsapp-name" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required="">
+            </div>
+            <div class="mb-4" id="el-krxautji">
+              <label for="whatsapp-number" class="block text-neutral-700 font-medium mb-2" id="el-eilnsjzg">WhatsApp Number</label>
+              <input type="tel" id="whatsapp-number" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required="">
+            </div>
+            <div class="flex justify-end" id="el-n4kg1uo4">
+              <button type="submit" class="px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-300" id="el-ip30is25">
+                Request Invitation
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Calendar Modal -->
+    <div id="calendar-modal" class="fixed inset-0 bg-neutral-900 bg-opacity-50 z-50 flex items-center justify-center hidden" aria-modal="true" aria-hidden="true">
+      <div class="bg-white rounded-lg max-w-md w-full mx-4" role="dialog" aria-labelledby="calendar-modal-title" id="el-c12ab97z">
+        <div class="p-6 border-b border-neutral-200 flex justify-between items-center" id="el-hr0lelk0">
+          <h3 id="calendar-modal-title" class="text-xl font-bold text-neutral-800">Add to Calendar</h3>
+          <button id="close-calendar-modal-btn" class="text-neutral-500 hover:text-neutral-700" aria-label="Close modal">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-bvv3iq1c">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" id="el-hrz54ye2"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="p-6" id="el-7bor9i55">
+          <p class="text-neutral-700 mb-6" id="el-yh8uihp4">
+            Choose your preferred calendar platform to add the recurring Code &amp; Beyond sessions.
+          </p>
+          <div class="space-y-4" id="el-mb73qbde">
+            <button class="w-full flex items-center justify-between p-4 border border-neutral-300 rounded-lg hover:bg-neutral-50 transition-colors" id="el-0pk68yaz">
+              <span class="font-medium" id="el-8uc8ged0">Google Calendar</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-500" viewBox="0 0 20 20" fill="currentColor" id="el-nn0oo9vs">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" id="el-guuqtxug"></path>
+              </svg>
+            </button>
+            <button class="w-full flex items-center justify-between p-4 border border-neutral-300 rounded-lg hover:bg-neutral-50 transition-colors" id="el-joxi4nvm">
+              <span class="font-medium" id="el-mefc1yfb">Microsoft Outlook</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-500" viewBox="0 0 20 20" fill="currentColor" id="el-b8d3jj1g">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" id="el-53qqrug3"></path>
+              </svg>
+            </button>
+            <button class="w-full flex items-center justify-between p-4 border border-neutral-300 rounded-lg hover:bg-neutral-50 transition-colors" id="el-t5qajs2a">
+              <span class="font-medium" id="el-lvfjark3">Apple Calendar</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-500" viewBox="0 0 20 20" fill="currentColor" id="el-bx2js9fm">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" id="el-7c31te8u"></path>
+              </svg>
+            </button>
+            <button class="w-full flex items-center justify-between p-4 border border-neutral-300 rounded-lg hover:bg-neutral-50 transition-colors" id="el-l4z6qgmt">
+              <span class="font-medium" id="el-aupvb7nk">Download .ics File</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-500" viewBox="0 0 20 20" fill="currentColor" id="el-k4hlgzf7">
+                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" id="el-snjgftxk"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Email Modal -->
+    <div id="email-modal" class="fixed inset-0 bg-neutral-900 bg-opacity-50 z-50 flex items-center justify-center hidden" aria-modal="true" aria-hidden="true">
+      <div class="bg-white rounded-lg max-w-md w-full mx-4" role="dialog" aria-labelledby="email-modal-title" id="el-ab861kbz">
+        <div class="p-6 border-b border-neutral-200 flex justify-between items-center" id="el-w8wm7knb">
+          <h3 id="email-modal-title" class="text-xl font-bold text-neutral-800">Subscribe to Email Updates</h3>
+          <button id="close-email-modal-btn" class="text-neutral-500 hover:text-neutral-700" aria-label="Close modal">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-tiu29vxc">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" id="el-npjy6pku"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="p-6" id="el-zi6g1yqe">
+          <p class="text-neutral-700 mb-4" id="el-0l0pl6dy">
+            Subscribe to receive "This Week on Code &amp; Beyond" emails with session details and preparation materials.
+          </p>
+          <form id="email-form">
+            <div class="mb-4" id="el-5b9oyg11">
+              <label for="email-name" class="block text-neutral-700 font-medium mb-2" id="el-ffsyw7xm">Your Name</label>
+              <input type="text" id="email-name" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required="">
+            </div>
+            <div class="mb-4" id="el-e1c8i523">
+              <label for="email-address" class="block text-neutral-700 font-medium mb-2" id="el-6f6ykier">Email Address</label>
+              <input type="email" id="email-address" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required="">
+            </div>
+            <div class="mb-4" id="el-13mb65e9">
+              <label class="flex items-start" id="el-4uwhv7wf">
+                <input type="checkbox" class="mt-1 mr-2" required="" id="el-rdype4s5">
+                <span class="text-sm text-neutral-600" id="el-8xbjghaf">
+                  I agree to receive weekly emails about upcoming Code &amp; Beyond sessions. I understand I can unsubscribe at any time.
+                </span>
+              </label>
+            </div>
+            <div class="flex justify-end" id="el-0t2oaj2m">
+              <button type="submit" class="px-6 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-colors duration-300" id="el-5ztl332n">
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // WhatsApp Modal Elements
+        const joinWhatsappBtn = document.getElementById('join-whatsapp-btn');
+        const whatsappModal = document.getElementById('whatsapp-modal');
+        const closeWhatsappModalBtn = document.getElementById('close-whatsapp-modal-btn');
+        const whatsappForm = document.getElementById('whatsapp-form');
+        
+        // Calendar Modal Elements
+        const addCalendarBtn = document.getElementById('add-calendar-btn');
+        const calendarModal = document.getElementById('calendar-modal');
+        const closeCalendarModalBtn = document.getElementById('close-calendar-modal-btn');
+        
+        // Email Modal Elements
+        const subscribeEmailBtn = document.getElementById('subscribe-email-btn');
+        const emailModal = document.getElementById('email-modal');
+        const closeEmailModalBtn = document.getElementById('close-email-modal-btn');
+        const emailForm = document.getElementById('email-form');
+        
+        let lastFocusedElement;
+        
+        // Function to open WhatsApp modal
+        function openWhatsappModal() {
+          lastFocusedElement = document.activeElement;
+          whatsappModal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+          whatsappModal.setAttribute('aria-hidden', 'false');
+          
+          // Focus trap
+          setTimeout(() => {
+            closeWhatsappModalBtn.focus();
+          }, 100);
+        }
+        
+        // Function to close WhatsApp modal
+        function closeWhatsappModal() {
+          whatsappModal.classList.add('hidden');
+          document.body.style.overflow = '';
+          whatsappModal.setAttribute('aria-hidden', 'true');
+          
+          // Return focus
+          if (lastFocusedElement) {
+            lastFocusedElement.focus();
+          }
+        }
+        
+        // Function to open Calendar modal
+        function openCalendarModal() {
+          lastFocusedElement = document.activeElement;
+          calendarModal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+          calendarModal.setAttribute('aria-hidden', 'false');
+          
+          // Focus trap
+          setTimeout(() => {
+            closeCalendarModalBtn.focus();
+          }, 100);
+        }
+        
+        // Function to close Calendar modal
+        function closeCalendarModal() {
+          calendarModal.classList.add('hidden');
+          document.body.style.overflow = '';
+          calendarModal.setAttribute('aria-hidden', 'true');
+          
+          // Return focus
+          if (lastFocusedElement) {
+            lastFocusedElement.focus();
+          }
+        }
+        
+        // Function to open Email modal
+        function openEmailModal() {
+          lastFocusedElement = document.activeElement;
+          emailModal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+          emailModal.setAttribute('aria-hidden', 'false');
+          
+          // Focus trap
+          setTimeout(() => {
+            closeEmailModalBtn.focus();
+          }, 100);
+        }
+        
+        // Function to close Email modal
+        function closeEmailModal() {
+          emailModal.classList.add('hidden');
+          document.body.style.overflow = '';
+          emailModal.setAttribute('aria-hidden', 'true');
+          
+          // Return focus
+          if (lastFocusedElement) {
+            lastFocusedElement.focus();
+          }
+        }
+        
+        // Event listeners for WhatsApp modal
+        joinWhatsappBtn.addEventListener('click', openWhatsappModal);
+        closeWhatsappModalBtn.addEventListener('click', closeWhatsappModal);
+        
+        whatsappModal.addEventListener('click', function(e) {
+          if (e.target === whatsappModal) {
+            closeWhatsappModal();
+          }
+        });
+        
+        // Event listeners for Calendar modal
+        addCalendarBtn.addEventListener('click', openCalendarModal);
+        closeCalendarModalBtn.addEventListener('click', closeCalendarModal);
+        
+        calendarModal.addEventListener('click', function(e) {
+          if (e.target === calendarModal) {
+            closeCalendarModal();
+          }
+        });
+        
+        // Event listeners for Email modal
+        subscribeEmailBtn.addEventListener('click', openEmailModal);
+        closeEmailModalBtn.addEventListener('click', closeEmailModal);
+        
+        emailModal.addEventListener('click', function(e) {
+          if (e.target === emailModal) {
+            closeEmailModal();
+          }
+        });
+        
+        // Form submissions
+        whatsappForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          // Here you would typically handle the form submission via AJAX
+          alert('WhatsApp invitation request submitted!');
+          closeWhatsappModal();
+        });
+        
+        emailForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          // Here you would typically handle the form submission via AJAX
+          alert('Email subscription successful!');
+          closeEmailModal();
+        });
+        
+        // ESC key handler for all modals
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            if (!whatsappModal.classList.contains('hidden')) {
+              closeWhatsappModal();
+            }
+            if (!calendarModal.classList.contains('hidden')) {
+              closeCalendarModal();
+            }
+            if (!emailModal.classList.contains('hidden')) {
+              closeEmailModal();
+            }
+          }
+        });
+      });
+    </script>
+  </section>
+</div>
+
+              
+              
+              
+
+<div id="root">
+  <section id="engagement" class="py-16 bg-neutral-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-800 mb-4">Benefits</h2>
+        <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+          Enjoy these special perks when you participate in our weekly tech talks.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="relative rounded-lg overflow-hidden mb-8">
+            <img 
+              src="https://images.unsplash.com/photo-1560307133-c9e095bd2f52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8dGVjaCUyMHRhbGslMjBhdWRpZW5jZSUyMGVuZ2FnZW1lbnR8ZW58MHx8fHwxNzQ2NTE1NDQ2fDA&ixlib=rb-4.1.0&q=80&w=1080" 
+              alt="Colleagues collaborating" 
+              class="w-full h-auto object-cover aspect-video"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent opacity-60"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3 class="text-xl font-bold mb-2">Build Connections</h3>
+              <p>Strengthen relationships with colleagues across departments</p>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg border border-neutral-200">
+            <h3 class="text-xl font-bold text-neutral-800 mb-4">Why Participate?</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <div class="bg-blue-100 rounded-full p-1 mr-3 mt-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-neutral-800">Expand Your Knowledge</h4>
+                  <p class="text-neutral-600">Learn from experts across different technical domains</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="bg-blue-100 rounded-full p-1 mr-3 mt-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-neutral-800">Networking Opportunities</h4>
+                  <p class="text-neutral-600">Connect with colleagues you might not interact with daily</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="bg-blue-100 rounded-full p-1 mr-3 mt-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-neutral-800">Professional Development</h4>
+                  <p class="text-neutral-600">Enhance your skills and stay current with industry trends</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div>
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-2xl font-bold text-neutral-800">Special Perks</h3>
+              <div class="bg-yellow-100 text-yellow-800 text-xs font-medium px-3 py-1 rounded-full">
+                For All Attendees
+              </div>
+            </div>
+            
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="bg-blue-500 rounded-lg p-3 text-white mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-neutral-800 mb-1">Speaker Shoutouts</h4>
+                  <p class="text-neutral-600">Special recognition for first-time speakers to celebrate their contribution and courage.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="bg-green-500 rounded-lg p-3 text-white mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-neutral-800 mb-1">Refreshments</h4>
+                  <p class="text-neutral-600">Enjoy complimentary snacks during each session to keep your energy up while learning.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="bg-purple-500 rounded-lg p-3 text-white mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-neutral-800 mb-1">Community Building</h4>
+                  <p class="text-neutral-600">Be part of a growing community of knowledge-sharing professionals within our organization.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="relative rounded-lg overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8dGVjaCUyMHRhbGslMjBhdWRpZW5jZSUyMGVuZ2FnZW1lbnR8ZW58MHx8fHwxNzQ2NTE1NDQ2fDA&ixlib=rb-4.1.0&q=80&w=1080" 
+              alt="Modern tech workspace" 
+              class="w-full h-auto object-cover aspect-video"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent opacity-70"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3 class="text-xl font-bold mb-2">Learning Environment</h3>
+              <p>Comfortable setting for optimal knowledge sharing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-16 bg-blue-50 rounded-lg p-8 border border-blue-100">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 class="text-2xl font-bold text-neutral-800 mb-2">Ready to Participate?</h3>
+            <p class="text-neutral-600">Join us every Wednesday and be part of our knowledge-sharing community.</p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#schedule" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-300 text-center">
+              View Schedule
+            </a>
+            <a href="https://forms.gle/9EYzKcx8rHnJgMEN9" target="_blank">
+            <button class="px-6 py-3 bg-neutral-800 hover:bg-neutral-700 text-white font-medium rounded-lg transition-colors duration-300">
+              Suggest a Topic
+            </button>
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Topic Suggestion Modal -->
+    <div id="topic-modal" class="fixed inset-0 bg-neutral-900 bg-opacity-50 z-50 flex items-center justify-center hidden" aria-modal="true" aria-hidden="true">
+      <div class="bg-white rounded-lg max-w-lg w-full mx-4" role="dialog" aria-labelledby="topic-modal-title">
+        <div class="p-6 border-b border-neutral-200 flex justify-between items-center">
+          <h3 id="topic-modal-title" class="text-xl font-bold text-neutral-800">Suggest a Topic</h3>
+          <button id="close-topic-modal-btn" class="text-neutral-500 hover:text-neutral-700" aria-label="Close modal">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="p-6">
+          <p class="text-neutral-700 mb-4">
+            Have an idea for a future tech talk? Let us know what topics you'd like to see covered.
+          </p>
+          <form id="topic-form">
+            <div class="mb-4">
+              <label for="topic-title" class="block text-neutral-700 font-medium mb-2">Topic Title</label>
+              <input type="text" id="topic-title" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <div class="mb-4">
+              <label for="topic-description" class="block text-neutral-700 font-medium mb-2">Brief Description</label>
+              <textarea id="topic-description" rows="3" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+            </div>
+            <div class="mb-4">
+              <label for="suggested-speaker" class="block text-neutral-700 font-medium mb-2">Suggested Speaker (Optional)</label>
+              <input type="text" id="suggested-speaker" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="mb-4">
+              <label for="your-name" class="block text-neutral-700 font-medium mb-2">Your Name</label>
+              <input type="text" id="your-name" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <div class="mb-4">
+              <label for="your-email" class="block text-neutral-700 font-medium mb-2">Your Email</label>
+              <input type="email" id="your-email" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <div class="flex justify-end">
+              <button type="submit" class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-300">
+                Submit Suggestion
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Topic Modal Elements
+        const suggestTopicBtn = document.getElementById('suggest-topic-btn');
+        const topicModal = document.getElementById('topic-modal');
+        const closeTopicModalBtn = document.getElementById('close-topic-modal-btn');
+        const topicForm = document.getElementById('topic-form');
+        
+        let lastFocusedElement;
+        
+        // Function to open topic modal
+        function openTopicModal() {
+          lastFocusedElement = document.activeElement;
+          topicModal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+          topicModal.setAttribute('aria-hidden', 'false');
+          
+          // Focus trap
+          setTimeout(() => {
+            closeTopicModalBtn.focus();
+          }, 100);
+        }
+        
+        // Function to close topic modal
+        function closeTopicModal() {
+          topicModal.classList.add('hidden');
+          document.body.style.overflow = '';
+          topicModal.setAttribute('aria-hidden', 'true');
+          
+          // Return focus
+          if (lastFocusedElement) {
+            lastFocusedElement.focus();
+          }
+        }
+        
+        // Event listeners for topic modal
+        suggestTopicBtn.addEventListener('click', openTopicModal);
+        closeTopicModalBtn.addEventListener('click', closeTopicModal);
+        
+        topicModal.addEventListener('click', function(e) {
+          if (e.target === topicModal) {
+            closeTopicModal();
+          }
+        });
+        
+        // Form submission
+        topicForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          // Here you would typically handle the form submission via AJAX
+          alert('Topic suggestion submitted successfully!');
+          closeTopicModal();
+        });
+        
+        // ESC key handler
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && !topicModal.classList.contains('hidden')) {
+            closeTopicModal();
+          }
+        });
+      });
+    </script>
+  </section>
+</div>
+
+
+                
+                
+                
+                
+                
+<div id="root">
+  <section id="post-event" class="py-16 bg-white">
+    <div class="container mx-auto px-4" id="el-4idl1vnc">
+      <div class="text-center mb-12" id="el-onmk22i5">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-800 mb-4" id="el-fjm6s7fc">Resources</h2>
+        <p class="text-lg text-neutral-600 max-w-3xl mx-auto" id="el-20k785y0">
+          Access recordings and materials from past sessions to revisit key insights.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16" id="el-ofblhnuv">
+        <div id="el-7llh1gzg">
+          <h3 class="text-2xl font-bold text-neutral-800 mb-6" id="el-j06239d8">Post-Event Materials</h3>
+          
+          <div class="space-y-6" id="el-f494pzil">
+            
+            
+            <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 transition-all hover:shadow-md" id="el-itndwg3y">
+              <div class="flex items-start gap-4" id="el-56h7uvlm">
+                <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0" id="el-gx69ezyu">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-bq3m7ies">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" id="el-5ivd3sor"></path>
+                  </svg>
+                </div>
+                <div class="flex-1" id="el-mywoa6e8">
+                  <h4 class="text-lg font-semibold text-neutral-800" id="el-14mrpb8a" data-original-content="Summary Notes" style="transition: outline 0.2s, background-color 0.2s;" contenteditable="false">Resources</h4>
+                  <p class="text-neutral-600 mb-3" id="el-2kcsxz4f" data-original-content="Concise notes capturing key points, insights, and action items from each session." style="transition: outline 0.2s, background-color 0.2s;" contenteditable="false">Concise resources capturing key points, insights, and action items from each session.</p>
+                  
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 transition-all hover:shadow-md" id="el-8ce745mw">
+              <div class="flex items-start gap-4" id="el-n10kq7rn">
+                <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0" id="el-9l42u1bq">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-nmvr0qyi">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" id="el-vsruyjix"></path>
+                  </svg>
+                </div>
+                <div class="flex-1" id="el-iwh7u0xn">
+                  <h4 class="text-lg font-semibold text-neutral-800" id="el-jzoi5se4">Presentation Materials</h4>
+                  <p class="text-neutral-600 mb-3" id="el-2vtml062">Slides, code samples, and additional resources shared by speakers during their presentations.</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="el-mtomv0yd">
+          <div class="col-span-2" id="el-0dadycsr">
+            <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 transition-all hover:shadow-md" id="el-8ce745mw">
+              <div class="flex items-start gap-4" id="el-n10kq7rn">
+                <div class="w-12 h-12 bg-black-500 rounded-lg flex items-center justify-center flex-shrink-0" id="el-9l42u1bq">
+                  
+                  <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 17H17.01M17.4 14H18C18.9319 14 19.3978 14 19.7654 14.1522C20.2554 14.3552 20.6448 14.7446 20.8478 15.2346C21 15.6022 21 16.0681 21 17C21 17.9319 21 18.3978 20.8478 18.7654C20.6448 19.2554 20.2554 19.6448 19.7654 19.8478C19.3978 20 18.9319 20 18 20H6C5.06812 20 4.60218 20 4.23463 19.8478C3.74458 19.6448 3.35523 19.2554 3.15224 18.7654C3 18.3978 3 17.9319 3 17C3 16.0681 3 15.6022 3.15224 15.2346C3.35523 14.7446 3.74458 14.3552 4.23463 14.1522C4.60218 14 5.06812 14 6 14H6.6M12 15V4M12 15L9 12M12 15L15 12" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+
+                </div>
+                <div class="flex-1" id="el-iwh7u0xn">
+                  <h4 class="text-lg font-semibold text-neutral-800" id="el-jzoi5se4">Download</h4>
+                  <p class="text-neutral-600 mb-3" id="el-2vtml062">All the resources from the last events can be accessed here.</p>
+                  
+                </div>
+          </div>
+          <br>
+          <a href="https://drive.google.com/drive/folders/1nDzIik6pAMEtRWXK2dz9eAYrhPevqBXR?usp=sharing" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-300" target="_blank">
+                  Download
+                </a>
+              </div>
+            </div>
+            </div>
+          </div>
+          
+          
+          
+          
+        </div>
+      </div>
+      
+      <div class="bg-neutral-50 p-8 rounded-lg border border-neutral-200" id="el-uncpwj6o">
+        <h3 class="text-2xl font-bold text-neutral-800 mb-6" id="el-02xfee8f">Resource Access Guidelines</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="el-xugtaths">
+          <div class="bg-white p-5 rounded-lg border border-neutral-200" id="el-7oy9s7p8">
+            <div class="flex items-center mb-4" id="el-eeh6ebz9">
+              <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3" id="el-2zju9jlz">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600" viewBox="0 0 20 20" fill="currentColor" id="el-8s41bw59">
+                  <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" id="el-mwdyc6e9"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-neutral-800" id="el-sbi7b2bk">Internal Use Only</h4>
+            </div>
+            <p class="text-neutral-600" id="el-kqjwnh0p">
+              All materials are for internal use only. Please do not share outside the organization without permission.
+            </p>
+          </div>
+          
+          <div class="bg-white p-5 rounded-lg border border-neutral-200" id="el-9wcxx893">
+            <div class="flex items-center mb-4" id="el-1x2j4q8e">
+              <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3" id="el-mzpuoigi">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" id="el-9n80bt36">
+                  <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" id="el-aksiqzuv"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-neutral-800" id="el-qoapflak">Provide Feedback</h4>
+            </div>
+            <p class="text-neutral-600" id="el-nf5obvpw">
+              Your feedback helps improve future sessions. Please share your thoughts after reviewing materials.
+            </p>
+          </div>
+          
+          <div class="bg-white p-5 rounded-lg border border-neutral-200" id="el-vdlmx8c7">
+            <div class="flex items-center mb-4" id="el-f6wm1m2m">
+              <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-3" id="el-weauokm7">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600" viewBox="0 0 20 20" fill="currentColor" id="el-6r42wt29">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" id="el-6a2ig5b4"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-neutral-800" id="el-2dyu2k0i">Request Materials</h4>
+            </div>
+            <p class="text-neutral-600" id="el-luh8y6de">
+              If you need specific materials from past sessions that aren't available, please contact the organizers.
+            </p>
+          </div>
+        </div>
+        <footer class="text-neutral-600" id="el-footer">
+          
+          
+        </footer>
+      </div>
+    </div>
+    
+    <!-- Recordings Modal -->
+    <div id="recordings-modal" class="fixed inset-0 bg-neutral-900 bg-opacity-50 z-50 flex items-center justify-center hidden" aria-modal="true" aria-hidden="true">
+      <div class="bg-white rounded-lg max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto" role="dialog" aria-labelledby="recordings-modal-title" id="el-h4rg4mny">
+        <div class="p-6 border-b border-neutral-200 flex justify-between items-center" id="el-lkp1exgu">
+          <h3 id="recordings-modal-title" class="text-xl font-bold text-neutral-800">Session Recordings</h3>
+          <button id="close-recordings-modal-btn" class="text-neutral-500 hover:text-neutral-700" aria-label="Close modal">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-wrpjmevq">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" id="el-6gnfcfi8"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="p-6" id="el-x2m3laln">
+          <div class="mb-6" id="el-liamhdmc">
+            <div class="relative" id="el-zdnruo7v">
+              <input type="text" placeholder="Search recordings..." class="w-full px-4 py-2 pr-10 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id="el-qnilbra8">
+              <div class="absolute right-3 top-2.5 text-neutral-400" id="el-95ml8btj">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" id="el-2i9wjjsf">
+                  <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" id="el-jiwmmmkz"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <div class="space-y-4" id="el-su2e8l51">
+            <div class="bg-neutral-50 p-4 rounded-lg border border-neutral-200" id="el-t7uzdblt">
+              <div class="flex flex-col md:flex-row md:items-center gap-4" id="el-ep5ffulz">
+                <div class="md:w-1/3 h-40 bg-neutral-200 rounded-md overflow-hidden relative" id="el-nj7pzwux">
+                  <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8dGVjaCUyMHRhbGslMjByZWNvcmRpbmclMjBzaGFyaW5nfGVufDF8fHx8MTc0NjUxNTUyMHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Recording thumbnail" class="w-full h-full object-cover" id="el-g6mweilk">
+                  <div class="absolute inset-0 flex items-center justify-center" id="el-frf1xtrw">
+                    <div class="bg-white bg-opacity-80 rounded-full p-2 hover:bg-opacity-100 transition-all" id="el-kudbyeop">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" viewBox="0 0 20 20" fill="currentColor" id="el-dbeuilgz">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" id="el-ppazubo1"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="md:w-2/3" id="el-0t6og3cu">
+                  <h4 class="text-lg font-semibold text-neutral-800" id="el-muceghh6">Frontend Mastery: Smart Strategies for Scalable UI</h4>
+                  <p class="text-neutral-600 mb-2" id="el-3foocedp">Shekhar Kumar | June 5, 2023</p>
+                  <p class="text-neutral-600 mb-4" id="el-upjv3az2">Learn advanced techniques for building scalable and maintainable frontend architectures.</p>
+                  <div class="flex flex-wrap gap-2" id="el-cwgpn28z">
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full" id="el-fsy38g8v">Frontend</span>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full" id="el-ejqd0if1">UI/UX</span>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full" id="el-h7dhfxuu">Architecture</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-neutral-50 p-4 rounded-lg border border-neutral-200" id="el-d3y33w6k">
+              <div class="flex flex-col md:flex-row md:items-center gap-4" id="el-i5rdclg9">
+                <div class="md:w-1/3 h-40 bg-neutral-200 rounded-md overflow-hidden relative" id="el-zqcqbqs6">
+                  <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8dGVjaCUyMHRhbGslMjByZWNvcmRpbmclMjBzaGFyaW5nfGVufDF8fHx8MTc0NjUxNTUyMHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Recording thumbnail" class="w-full h-full object-cover" id="el-ov6u34mb">
+                  <div class="absolute inset-0 flex items-center justify-center" id="el-ynyepsgg">
+                    <div class="bg-white bg-opacity-80 rounded-full p-2 hover:bg-opacity-100 transition-all" id="el-jpvesrgp">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" viewBox="0 0 20 20" fill="currentColor" id="el-0y7eao3c">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" id="el-1fdisq1f"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="md:w-2/3" id="el-m78xzwp9">
+                  <h4 class="text-lg font-semibold text-neutral-800" id="el-f9vvkv5c">Modules in Plugin Development for Magento and Shopify</h4>
+                  <p class="text-neutral-600 mb-2" id="el-bmj0wi7o">Amaresh Tiwari | May 29, 2023</p>
+                  <p class="text-neutral-600 mb-4" id="el-ceyntgj8">A comparative insight into module development approaches for two popular e-commerce platforms.</p>
+                  <div class="flex flex-wrap gap-2" id="el-52mne2mp">
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full" id="el-oncjml40">E-commerce</span>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full" id="el-qwrlbb1d">Magento</span>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full" id="el-6d4vkxyx">Shopify</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-neutral-50 p-4 rounded-lg border border-neutral-200" id="el-fq4w4v84">
+              <div class="flex flex-col md:flex-row md:items-center gap-4" id="el-h9urmk0k">
+                <div class="md:w-1/3 h-40 bg-neutral-200 rounded-md overflow-hidden relative" id="el-6s9bo3kc">
+                  <img src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8M3x8dGVjaCUyMHRhbGslMjByZWNvcmRpbmclMjBzaGFyaW5nfGVufDF8fHx8MTc0NjUxNTUyMHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Recording thumbnail" class="w-full h-full object-cover" id="el-s8mqqomt">
+                  <div class="absolute inset-0 flex items-center justify-center" id="el-ggp2o77z">
+                    <div class="bg-white bg-opacity-80 rounded-full p-2 hover:bg-opacity-100 transition-all" id="el-745bxihx">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" viewBox="0 0 20 20" fill="currentColor" id="el-4x3axtd5">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" id="el-ph3mhbnr"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="md:w-2/3" id="el-qpq07jye">
+                  <h4 class="text-lg font-semibold text-neutral-800" id="el-pdl35tib">Client Communication and Project Management</h4>
+                  <p class="text-neutral-600 mb-2" id="el-r2d57qm1">Kuldeep Vaishaya | May 22, 2023</p>
+                  <p class="text-neutral-600 mb-4" id="el-yjvdi4qt">Effective strategies for managing client expectations and delivering successful projects.</p>
+                  <div class="flex flex-wrap gap-2" id="el-qgh8df7t">
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full" id="el-ebzggq2y">Project Management</span>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full" id="el-clhl6dw5">Communication</span>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full" id="el-s3qmhgn0">Soft Skills</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6 flex justify-center" id="el-nwxypfgy">
+            <button class="px-4 py-2 border border-neutral-300 rounded-lg text-neutral-700 hover:bg-neutral-50 transition-colors" id="el-tdoje2sb">
+              Load More Recordings
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Notes Modal -->
+    <div id="notes-modal" class="fixed inset-0 bg-neutral-900 bg-opacity-50 z-50 flex items-center justify-center hidden" aria-modal="true" aria-hidden="true">
+      <div class="bg-white rounded-lg max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto" role="dialog" aria-labelledby="notes-modal-title" id="el-9102b648">
+        <div class="p-6 border-b border-neutral-200 flex justify-between items-center" id="el-p1dx7jw6">
+          <h3 id="notes-modal-title" class="text-xl font-bold text-neutral-800">Summary Notes</h3>
+          <button id="close-notes-modal-btn" class="text-neutral-500 hover:text-neutral-700" aria-label="Close modal">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-bjdahctc">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" id="el-hu5o6mhw"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="p-6" id="el-xbcc2a53">
+          <div class="mb-6" id="el-iyhx8qph">
+            <select class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" id="el-hfg8rz6v">
+              <option value="" id="el-wgzeraop">Select a session</option>
+              <option value="frontend-mastery" id="el-4rexic0v">Frontend Mastery (June 5, 2023)</option>
+              <option value="plugin-development" id="el-tfimy0b3">Modules in Plugin Development (May 29, 2023)</option>
+              <option value="client-communication" id="el-wow1igyl">Client Communication (May 22, 2023)</option>
+              <option value="excel-use-cases" id="el-mt1jgnqd">Excel Use Cases for Developers (May 15, 2023)</option>
+            </select>
+          </div>
+          
+          <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200" id="el-33gje8l1">
+            <div class="flex justify-between items-center mb-4" id="el-fgz0ww0s">
+              <h4 class="text-lg font-semibold text-neutral-800" id="el-yww43clf">Frontend Mastery: Smart Strategies</h4>
+              <span class="text-sm text-neutral-500" id="el-wgor5bez">June 5, 2023</span>
+            </div>
+            
+            <div class="space-y-4" id="el-rah4hgfz">
+              <div id="el-96afh1oa">
+                <h5 class="font-medium text-neutral-800 mb-1" id="el-0iac8c0d">Key Points</h5>
+                <ul class="list-disc pl-5 text-neutral-600 space-y-1" id="el-shzrtw6y">
+                  <li id="el-5okbldku">Component-based architecture improves maintainability</li>
+                  <li id="el-5q7nzh7z">State management patterns for complex applications</li>
+                  <li id="el-4b3vqz3h">Performance optimization techniques for modern UIs</li>
+                  <li id="el-o474sjj1">Design system implementation for consistency</li>
+                </ul>
+              </div>
+              
+              <div id="el-jqb74kct">
+                <h5 class="font-medium text-neutral-800 mb-1" id="el-2p7fbvfe">Action Items</h5>
+                <ul class="list-disc pl-5 text-neutral-600 space-y-1" id="el-p4iakx2q">
+                  <li id="el-bhskfw1n">Review current frontend architecture</li>
+                  <li id="el-ndtvzbtt">Implement shared component library</li>
+                  <li id="el-7kyucu2m">Adopt performance monitoring tools</li>
+                </ul>
+              </div>
+              
+              <div id="el-zv8bii8n">
+                <h5 class="font-medium text-neutral-800 mb-1" id="el-v7kul2x7">Resources Shared</h5>
+                <ul class="list-disc pl-5 text-neutral-600 space-y-1" id="el-pz6l3qs7">
+                  <li id="el-0t7vdv71">Frontend Architecture Playbook (PDF)</li>
+                  <li id="el-zfmcv73q">Component Design System Template (Figma)</li>
+                  <li id="el-8r814coy">Performance Optimization Checklist (Google Doc)</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="mt-6 flex justify-end" id="el-lfx6m2r0">
+              <button class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-300" id="el-9u1pargu">
+                Download PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Materials Modal -->
+    <div id="materials-modal" class="fixed inset-0 bg-neutral-900 bg-opacity-50 z-50 flex items-center justify-center hidden" aria-modal="true" aria-hidden="true">
+      <div class="bg-white rounded-lg max-w-3xl w-full mx-4 max-h-[90vh] overflow-y-auto" role="dialog" aria-labelledby="materials-modal-title" id="el-hul00d08">
+        <div class="p-6 border-b border-neutral-200 flex justify-between items-center" id="el-lm0krwor">
+          <h3 id="materials-modal-title" class="text-xl font-bold text-neutral-800">Presentation Materials</h3>
+          <button id="close-materials-modal-btn" class="text-neutral-500 hover:text-neutral-700" aria-label="Close modal">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-z06yhgm5">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" id="el-ltfgha5h"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="p-6" id="el-nodgp511">
+          <div class="mb-6" id="el-qk4y4im7">
+            <div class="relative" id="el-u8yrq3q6">
+              <input type="text" placeholder="Search materials..." class="w-full px-4 py-2 pr-10 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" id="el-p71w17vt">
+              <div class="absolute right-3 top-2.5 text-neutral-400" id="el-5h47zfgs">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" id="el-c5w6u2hb">
+                  <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" id="el-f41h287r"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="el-unzqputr">
+            <div class="bg-neutral-50 p-4 rounded-lg border border-neutral-200" id="el-w6vemg2z">
+              <div class="flex items-start gap-3" id="el-fjrvi12a">
+                <div class="w-10 h-12 bg-red-100 rounded flex items-center justify-center flex-shrink-0" id="el-ryyld2r2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-3rq7jc5n">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" id="el-8hs456l7"></path>
+                  </svg>
+                </div>
+                <div class="flex-1" id="el-lsgo7w2s">
+                  <h4 class="text-base font-semibold text-neutral-800" id="el-llbzp64u">Frontend_Mastery_Slides.pdf</h4>
+                  <p class="text-sm text-neutral-500 mb-2" id="el-wxpmyyye">Shekhar Kumar | 4.2 MB</p>
+                  <button class="text-purple-600 hover:text-purple-800 text-sm font-medium" id="el-tdwf39pm">Download</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-neutral-50 p-4 rounded-lg border border-neutral-200" id="el-3rvp8ua0">
+              <div class="flex items-start gap-3" id="el-nt6s1y8c">
+                <div class="w-10 h-12 bg-blue-100 rounded flex items-center justify-center flex-shrink-0" id="el-0s32lfkm">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-rtxl1am6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" id="el-ecs1x5jy"></path>
+                  </svg>
+                </div>
+                <div class="flex-1" id="el-96hyvkp7">
+                  <h4 class="text-base font-semibold text-neutral-800" id="el-owifrw10">component_examples.zip</h4>
+                  <p class="text-sm text-neutral-500 mb-2" id="el-u0pzjtxv">Shekhar Kumar | 2.8 MB</p>
+                  <button class="text-purple-600 hover:text-purple-800 text-sm font-medium" id="el-ewn6n08d">Download</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-neutral-50 p-4 rounded-lg border border-neutral-200" id="el-vd0yt0kp">
+              <div class="flex items-start gap-3" id="el-ubeiettq">
+                <div class="w-10 h-12 bg-green-100 rounded flex items-center justify-center flex-shrink-0" id="el-iuf2dhyn">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-brdj9g34">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" id="el-b92eloa8"></path>
+                  </svg>
+                </div>
+                <div class="flex-1" id="el-ryjf8p7k">
+                  <h4 class="text-base font-semibold text-neutral-800" id="el-tcnrlscn">performance_metrics.xlsx</h4>
+                  <p class="text-sm text-neutral-500 mb-2" id="el-jq5xdz7q">Shekhar Kumar | 1.5 MB</p>
+                  <button class="text-purple-600 hover:text-purple-800 text-sm font-medium" id="el-l3zz2k22">Download</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-neutral-50 p-4 rounded-lg border border-neutral-200" id="el-geg3rdex">
+              <div class="flex items-start gap-3" id="el-adk6lxfd">
+                <div class="w-10 h-12 bg-yellow-100 rounded flex items-center justify-center flex-shrink-0" id="el-l1qynvoo">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-cjynr12e">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" id="el-55kj8gka"></path>
+                  </svg>
+                </div>
+                <div class="flex-1" id="el-hxmax7aa">
+                  <h4 class="text-base font-semibold text-neutral-800" id="el-h8on3jnc">resources_links.docx</h4>
+                  <p class="text-sm text-neutral-500 mb-2" id="el-wlaaswis">Shekhar Kumar | 0.8 MB</p>
+                  <button class="text-purple-600 hover:text-purple-800 text-sm font-medium" id="el-6bnubhoa">Download</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6 flex justify-center" id="el-isov76hf">
+            <button class="px-4 py-2 border border-neutral-300 rounded-lg text-neutral-700 hover:bg-neutral-50 transition-colors" id="el-h83fdiym">
+              View All Materials
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Recordings Modal Elements
+        const viewRecordingsBtn = document.getElementById('view-recordings-btn');
+        const recordingsModal = document.getElementById('recordings-modal');
+        const closeRecordingsModalBtn = document.getElementById('close-recordings-modal-btn');
+        
+        // Notes Modal Elements
+        const viewNotesBtn = document.getElementById('view-notes-btn');
+        const notesModal = document.getElementById('notes-modal');
+        const closeNotesModalBtn = document.getElementById('close-notes-modal-btn');
+        
+        // Materials Modal Elements
+        const viewMaterialsBtn = document.getElementById('view-materials-btn');
+        const materialsModal = document.getElementById('materials-modal');
+        const closeMaterialsModalBtn = document.getElementById('close-materials-modal-btn');
+        
+        let lastFocusedElement;
+        
+        // Function to open recordings modal
+        function openRecordingsModal() {
+          lastFocusedElement = document.activeElement;
+          recordingsModal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+          recordingsModal.setAttribute('aria-hidden', 'false');
+          
+          // Focus trap
+          setTimeout(() => {
+            closeRecordingsModalBtn.focus();
+          }, 100);
+        }
+        
+        // Function to close recordings modal
+        function closeRecordingsModal() {
+          recordingsModal.classList.add('hidden');
+          document.body.style.overflow = '';
+          recordingsModal.setAttribute('aria-hidden', 'true');
+          
+          // Return focus
+          if (lastFocusedElement) {
+            lastFocusedElement.focus();
+          }
+        }
+        
+        // Function to open notes modal
+        function openNotesModal() {
+          lastFocusedElement = document.activeElement;
+          notesModal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+          notesModal.setAttribute('aria-hidden', 'false');
+          
+          // Focus trap
+          setTimeout(() => {
+            closeNotesModalBtn.focus();
+          }, 100);
+        }
+        
+        // Function to close notes modal
+        function closeNotesModal() {
+          notesModal.classList.add('hidden');
+          document.body.style.overflow = '';
+          notesModal.setAttribute('aria-hidden', 'true');
+          
+          // Return focus
+          if (lastFocusedElement) {
+            lastFocusedElement.focus();
+          }
+        }
+        
+        // Function to open materials modal
+        function openMaterialsModal() {
+          lastFocusedElement = document.activeElement;
+          materialsModal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+          materialsModal.setAttribute('aria-hidden', 'false');
+          
+          // Focus trap
+          setTimeout(() => {
+            closeMaterialsModalBtn.focus();
+          }, 100);
+        }
+        
+        // Function to close materials modal
+        function closeMaterialsModal() {
+          materialsModal.classList.add('hidden');
+          document.body.style.overflow = '';
+          materialsModal.setAttribute('aria-hidden', 'true');
+          
+          // Return focus
+          if (lastFocusedElement) {
+            lastFocusedElement.focus();
+          }
+        }
+        
+        // Event listeners for recordings modal
+        viewRecordingsBtn.addEventListener('click', openRecordingsModal);
+        closeRecordingsModalBtn.addEventListener('click', closeRecordingsModal);
+        
+        recordingsModal.addEventListener('click', function(e) {
+          if (e.target === recordingsModal) {
+            closeRecordingsModal();
+          }
+        });
+        
+        // Event listeners for notes modal
+        viewNotesBtn.addEventListener('click', openNotesModal);
+        closeNotesModalBtn.addEventListener('click', closeNotesModal);
+        
+        notesModal.addEventListener('click', function(e) {
+          if (e.target === notesModal) {
+            closeNotesModal();
+          }
+        });
+        
+        // Event listeners for materials modal
+        viewMaterialsBtn.addEventListener('click', openMaterialsModal);
+        closeMaterialsModalBtn.addEventListener('click', closeMaterialsModal);
+        
+        materialsModal.addEventListener('click', function(e) {
+          if (e.target === materialsModal) {
+            closeMaterialsModal();
+          }
+        });
+        
+        // ESC key handler for all modals
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            if (!recordingsModal.classList.contains('hidden')) {
+              closeRecordingsModal();
+            }
+            if (!notesModal.classList.contains('hidden')) {
+              closeNotesModal();
+            }
+            if (!materialsModal.classList.contains('hidden')) {
+              closeMaterialsModal();
+            }
+          }
+        });
+      });
+    </script>
+  </section>
+</div>
+
+              
+              
+              
+              
+              
+
+                
+<div id="root">
+  
+</div>
+
+              </div></mountpoint>
+      </main>
+
+      <!-- Core functionality scripts -->
+      <script>
+        // Initialize interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+          // Add interactive behaviors
+          const interactiveElements = document.querySelectorAll('.interactive-element');
+          interactiveElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+              element.classList.add('hover');
+            });
+            element.addEventListener('mouseleave', () => {
+              element.classList.remove('hover');
+            });
+          });
+
+          // Initialize any dynamic content
+          const dynamicContent = document.querySelectorAll('[data-dynamic]');
+          dynamicContent.forEach(content => {
+            // Add fade-in animation
+            content.classList.add('fade-in');
+          });
+        });
+
+        // Handle navigation
+        function handleNavigation(event) {
+          const link = event.currentTarget;
+          if (link.hasAttribute('data-nav')) {
+            event.preventDefault();
+            const target = link.getAttribute('data-nav');
+            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+
+        // Initialize navigation
+        document.querySelectorAll('[data-nav]').forEach(link => {
+          link.addEventListener('click', handleNavigation);
+        });
+      </script>
+
+      <!-- Body Scripts -->
+      <script id="body-scripts">
+        // This script tag will be replaced with actual scripts.body content
+        if (window.scripts && window.scripts.body) {
+          document.getElementById('body-scripts').outerHTML = window.scripts.body;
+        }
+      </script>
+   </body>
+</html>
